@@ -16,7 +16,7 @@ Application Load Balancer<br>
 <img width="1600" height="444" alt="image" src="https://github.com/user-attachments/assets/0a00117d-a4f0-4b19-8e8c-64cf17df598d" />
 Application Load Balancer Resource Map<br>
 <img width="1600" height="396" alt="image" src="https://github.com/user-attachments/assets/ec56e7cc-db83-47fd-8b05-55d26feb599f" />
-<img width="731" height="635" alt="image" src="https://github.com/user-attachments/assets/c03ae95c-dc1f-4066-8a0c-1bd0a6f46cd8" />
+
 
 
 ***
@@ -33,6 +33,7 @@ The web service is structured using several core AWS components to ensure scalab
 
 <img width="486" height="324" alt="image" src="https://github.com/user-attachments/assets/e6770f49-b96f-4fc4-a425-a3a4d81a225d" /><br>
 <img width="700" height="475" alt="image" src="https://github.com/user-attachments/assets/7ab3b109-33e3-42a2-af8d-eee53be8a1a7" />
+<img width="731" height="635" alt="image" src="https://github.com/user-attachments/assets/c03ae95c-dc1f-4066-8a0c-1bd0a6f46cd8" />
 
  **Service URL**: `http://anfa-1094077877.ap-northeast-2.elb.amazonaws.com/`
  The site is currently closed
