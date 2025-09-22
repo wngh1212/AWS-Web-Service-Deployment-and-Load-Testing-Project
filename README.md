@@ -33,6 +33,8 @@ The web service is structured using several core AWS components to ensure scalab
 <img width="700" height="475" alt="image" src="https://github.com/user-attachments/assets/7ab3b109-33e3-42a2-af8d-eee53be8a1a7" />
 
  **Service URL**: `http://anfa-1094077877.ap-northeast-2.elb.amazonaws.com/`
+ The site is currently closed
+
 
 ---
 
