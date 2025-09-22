@@ -16,6 +16,8 @@ Application Load Balancer<br>
 <img width="1600" height="444" alt="image" src="https://github.com/user-attachments/assets/0a00117d-a4f0-4b19-8e8c-64cf17df598d" />
 Application Load Balancer Resource Map<br>
 <img width="1600" height="396" alt="image" src="https://github.com/user-attachments/assets/ec56e7cc-db83-47fd-8b05-55d26feb599f" />
+<img width="731" height="635" alt="image" src="https://github.com/user-attachments/assets/c03ae95c-dc1f-4066-8a0c-1bd0a6f46cd8" />
+
 
 ***
 
@@ -115,38 +117,11 @@ While the **error rate was significantly reduced**, other metrics like response 
 *  The key takeaway is that the goal of testing isn't just to measure performance, but to **find and eliminate system bottlenecks**.
 * It became clear that performance optimization goes beyond code.  **Infrastructure configuration**, like tuning Nginx, is equally critical for a stable service. 
 *  Further testing was constrained by AWS Free Tier limits. <br>
-prometheus configure file
-```
-# my global config
-global:
-  scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
-  evaluation_interval: 10s # Evaluate rules every 15 seconds. The default is every 1 minute.
-  # scrape_timeout is set to the global default (10s).
+# And I'm going to explain some of the files that I posted
+alert-rules-1752997627396 -> Notification conditions are written according to the service server resource status of Grafana installed on the monitoring server<br>
+stage5.jmx -> This is a test file set to jmeter. You can import it to jmeter and use it right away<br>
+prometheus -> This is the configuration file for prometheus to collect metrics from the node exporter of the service server
 
-# Alertmanager configuration
-alerting:
-  alertmanagers:
-    - static_configs:
-        - targets:
-          # - alertmanager:9093
-
-# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
-rule_files:
-  # - "first_rules.yml"
-  # - "second_rules.yml"
-
-# A scrape configuration containing exactly one endpoint to scrape:
-# Here it's Prometheus itself.
-scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  - job_name: "prometheus"
-
-    # metrics_path defaults to '/metrics'
-    # scheme defaults to 'http'.
-
-    static_configs:
-      - targets: ["172.31.34.52:9100"]
-```
 
 
 
