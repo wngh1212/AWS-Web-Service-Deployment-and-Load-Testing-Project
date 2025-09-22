@@ -79,8 +79,7 @@ An analysis of the Nginx logs revealed the root cause: `768 worker_connections a
 
 ### Solution
 
- The Nginx configuration file (`nginx.conf`) was updated to increase the connection limit from 768 to **4000**, and the service was restarted. [cite: 67]
-
+ The Nginx configuration file (`nginx.conf`) was updated to increase the connection limit from 768 to **4000**, and the service was restarted.
 ### Performance Comparison: Before vs. After Tuning
 
 | Metric | Before Tuning | After Tuning |
