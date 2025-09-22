@@ -91,7 +91,7 @@ An analysis of the Nginx logs revealed the root cause: `768 worker_connections a
 
 ### Solution
 
- The Nginx configuration file (`nginx.conf`) was updated to increase the connection limit from 768 to **4000**, and the service was restarted.
+ The Nginx configuration file (`nginx.conf`) was updated to increase the connection limit from 768 to **4000**, and the service was restarted.<br>
 <img width="549" height="249" alt="image" src="https://github.com/user-attachments/assets/bfc09d12-5224-4ebb-8bc2-5358b8e1de60" />
 
  
