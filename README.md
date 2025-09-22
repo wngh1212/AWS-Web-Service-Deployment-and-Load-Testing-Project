@@ -68,20 +68,33 @@ The load was incrementally increased to stress the system.
 
 ---
 
-## 4. Test Analysis and Optimization 🛠️
+## 4. Test Analysis and Optimization
 
 ### Initial Problem
 
- During the first test cycle, the server's CPU and memory resources remained stable, but the application returned a massive **86.58% error rate**. The system accepted requests but failed to process them, sending no response back. 
+ During the first test cycle, the server's CPU and memory resources remained stable, but the application returned a massive **86.58% error rate**. The system accepted requests but failed to process them, sending no response back.<br>
+ <img width="856" height="451" alt="image" src="https://github.com/user-attachments/assets/9546b460-ac90-423d-9cce-de27abf41d08" />
+<img width="646" height="395" alt="image" src="https://github.com/user-attachments/assets/ec8bc620-2d5c-4dbf-85a4-8890264fd641" />
+
+<img width="1062" height="415" alt="image" src="https://github.com/user-attachments/assets/f02c1c74-46a1-4bb2-bf66-77081025d6d4" />
+
+### TMI
+Fortunately, the service didn't collapse thanks to the ALB you configured, because it was connected to another EC2 that didn't conduct a load test <br>
+<img width="640" height="394" alt="image" src="https://github.com/user-attachments/assets/ff223748-2e61-45fe-88c9-ae3d130541e4" />
 
 ### Root Cause
 
-An analysis of the Nginx logs revealed the root cause: `768 worker_connections are not enough`.The default number of connections Nginx could handle simultaneously was too low for the test load.
+An analysis of the Nginx logs revealed the root cause: `768 worker_connections are not enough`.The default number of connections Nginx could handle simultaneously was too low for the test load.<br>
+<img width="540" height="303" alt="image" src="https://github.com/user-attachments/assets/2054e609-f55d-4eb2-b3d5-0f5ef72879eb" />
+
 
 
 ### Solution
 
  The Nginx configuration file (`nginx.conf`) was updated to increase the connection limit from 768 to **4000**, and the service was restarted.
+<img width="549" height="249" alt="image" src="https://github.com/user-attachments/assets/bfc09d12-5224-4ebb-8bc2-5358b8e1de60" />
+
+ 
 ### Performance Comparison: Before vs. After Tuning
 
 | Metric | Before Tuning | After Tuning |
@@ -101,7 +114,7 @@ While the **error rate was significantly reduced**, other metrics like response 
 *  This project provided hands-on experience in the end-to-end process of cloud service deployment, monitoring, and performance tuning. 
 *  The key takeaway is that the goal of testing isn't just to measure performance, but to **find and eliminate system bottlenecks**.
 * It became clear that performance optimization goes beyond code.  **Infrastructure configuration**, like tuning Nginx, is equally critical for a stable service. 
-*  Further testing was constrained by AWS Free Tier limits. 
+*  Further testing was constrained by AWS Free Tier limits. <br>
 prometheus configure file
 ```
 # my global config
